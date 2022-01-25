@@ -547,10 +547,33 @@
 
     <repositories>
         <repository>
+            <id>robinmohan</id>
+            <url>https://pkgs.dev.azure.com/robinmohan/_packaging/robinmohan/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>repository.spring.milestone</id>
             <name>Spring Milestone Repository</name>
             <url>https://repo.spring.io/milestone</url>
         </repository>
     </repositories>
+    <distributionManagement>
+
+        <repository>
+            <id>robinmohan</id>
+            <url>https://pkgs.dev.azure.com/robinmohan/_packaging/robinmohan/maven/v1</url>
+            <releases>
+              <enabled>true</enabled>
+            </releases>
+            <snapshots>
+              <enabled>true</enabled>
+            </snapshots>
+          </repository>
+    </distributionManagement>
 
 </project>

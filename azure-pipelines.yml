@@ -16,8 +16,7 @@ steps:
 - task: MavenAuthenticate@0
   displayName: 'Maven Authenticate'
   inputs:
-    artifactsFeeds: devoteam-traineeship-petclinic
-    mavenServiceConnections: azureartifacts
+    artifactsFeeds: petclinic
 
 - task: Maven@3
   inputs:
