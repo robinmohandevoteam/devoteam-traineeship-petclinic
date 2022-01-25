@@ -547,15 +547,15 @@
 
     <repositories>
         <repository>
-            <id>robinmohan</id>
-            <url>https://pkgs.dev.azure.com/robinmohan/_packaging/robinmohan/maven/v1</url>
+            <id>petclinic</id>
+            <url>https://pkgs.dev.azure.com/robinmohan/petclinic/_packaging/petclinic/maven/v1</url>
             <releases>
-                <enabled>true</enabled>
+              <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+              <enabled>true</enabled>
             </snapshots>
-        </repository>
+          </repository>
         <repository>
             <id>repository.spring.milestone</id>
             <name>Spring Milestone Repository</name>
@@ -565,8 +565,8 @@
     <distributionManagement>
 
         <repository>
-            <id>robinmohan</id>
-            <url>https://pkgs.dev.azure.com/robinmohan/_packaging/robinmohan/maven/v1</url>
+            <id>petclinic</id>
+            <url>https://pkgs.dev.azure.com/robinmohan/petclinic/_packaging/petclinic/maven/v1</url>
             <releases>
               <enabled>true</enabled>
             </releases>
