@@ -1,18 +1,12 @@
 # We strongly recommend using the required_providers block to set the
 # Azure Provider source and version being used
 terraform {
-  backend "azurerm" {
-    resource_group_name   = "pers-robin_mohan-rg"
-    storage_account_name  = "storageforrobin"
-    container_name        = "tstate"
-    key                   = "Rk/X+EPlwSzzBaOrI2UGzVgeaorD+fXPXRllYSG1v2IOv7IqAepI3WDhqRR9Vo60S9zHXJN4GxIcoyR++FR2zA=="
-}
-  # required_providers {
-  #   azurerm = {
-  #     source  = "hashicorp/azurerm"
-  #     version = "=2.91.0"
-  #   }
-  # }
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.91.0"
+    }
+  }
 }
 
 # Configure the Microsoft Azure Provider
