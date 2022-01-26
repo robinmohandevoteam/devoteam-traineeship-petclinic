@@ -311,6 +311,30 @@
             </testResource>
         </testResources>
         <plugins>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                 <execution>
+                  <configuration>
+                   <executable>python3</executable>
+                   <workingDirectory>src/test/python</workingDirectory>
+                   <arguments>
+                    <argument>unitTests.py</argument>
+                   </arguments>    
+                   <environmentVariables>
+                     <PYTHONPATH>../../main/python:$PYTHONPATH</PYTHONPATH>
+                   </environmentVariables>
+                  </configuration>
+                  <id>python-test</id>
+                  <phase>test</phase>
+                  <goals>
+                   <goal>exec</goal>
+                  </goals>
+                 </execution>
+                </executions>
+               </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
