@@ -55,6 +55,14 @@ resource "azurerm_subnet" "internal" {
   address_prefixes     = ["10.0.2.0/24"]
 }
 
+resource "azurerm_public_ip" "main" {
+  name = "${var.prefix}-pip"
+  location = var.resource_group_location
+  resource_group_name = var.resource_group_name
+  allocation_method = "Dynamic"
+  sku = "Basic"
+}
+
 resource "azurerm_network_interface" "main" {
   name                = "${var.prefix}-nic"
   location            = var.resource_group_location
@@ -64,6 +72,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "testconfiguration1"
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_public_ip.main.id
   }
 }
 
@@ -105,10 +114,11 @@ resource "azurerm_virtual_machine" "main" {
   }
 }
 
+#this exports the ip to the hosts.cfg file for Ansible
 resource "local_file" "hosts_cfg" {
   content = templatefile("${path.module}/templates/hosts.tpl",
     {
-      test_clients = azurerm_virtual_machine.main.*.public_ip
+      test_clients = azurerm_public_ip.main.*.ip_address
     }
   )
   filename = "../ansible/inventory/hosts.cfg"
