@@ -115,11 +115,21 @@ resource "azurerm_virtual_machine" "main" {
 }
 
 #this exports the ip to the hosts.cfg file for Ansible
+# resource "local_file" "hosts_cfg" {
+#   content = templatefile("${path.module}/templates/hosts.tpl",
+#     {
+#       test_clients = azurerm_public_ip.main.*.ip_address
+#     }
+#   )
+#   filename = "../ansible/inventory/hosts.cfg"
+# }
+
 resource "local_file" "hosts_cfg" {
-  content = templatefile("${path.module}/templates/hosts.tpl",
+  content = templatefile("$(System.ArtifactsDirectory)/templates/hosts.tpl",
     {
       test_clients = azurerm_public_ip.main.*.ip_address
     }
   )
-  filename = "../ansible/inventory/hosts.cfg"
+  filename = "$(System.ArtifactsDirectory)/ansible/inventory/hosts.cfg"
 }
+
