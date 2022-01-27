@@ -104,3 +104,12 @@ resource "azurerm_virtual_machine" "main" {
     environment = "staging"
   }
 }
+
+resource "local_file" "hosts_cfg" {
+  content = templatefile("${path.module}/templates/hosts.tpl",
+    {
+      test_clients = azurerm_virtual_machine.main.*.public_ip
+    }
+  )
+  filename = "../ansible/inventory/hosts.cfg"
+}
