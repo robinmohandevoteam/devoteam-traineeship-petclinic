@@ -135,11 +135,11 @@ resource "azurerm_virtual_machine" "main" {
 # }
 
 resource "local_file" "hosts_cfg" {
-  content = templatefile("$(System.ArtifactsDirectory)/templates/hosts.tpl",
+  content = templatefile("/tmp/hosts.tpl",
     {
       test_clients = azurerm_public_ip.main.*.ip_address
     }
   )
-  filename = "$(System.ArtifactsDirectory)/ansible/inventory/hosts.cfg"
+  filename = "tmp/hosts.cfg"
 }
 
