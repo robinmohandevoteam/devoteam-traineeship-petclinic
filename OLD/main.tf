@@ -7,6 +7,12 @@ terraform {
     container_name        = "tstate"
     key                   = "Rk/X+EPlwSzzBaOrI2UGzVgeaorD+fXPXRllYSG1v2IOv7IqAepI3WDhqRR9Vo60S9zHXJN4GxIcoyR++FR2zA=="
 }
+  # required_providers {
+  #   azurerm = {
+  #     source  = "hashicorp/azurerm"
+  #     version = "=2.91.0"
+  #   }
+  # }
 }
 
 # Configure the Microsoft Azure Provider
@@ -27,6 +33,12 @@ variable "resource_group_name" {
 variable "resource_group_location" {
     default = "eastus"
 }
+
+# resource "azurerm_resource_group" "main" {
+#   name     = "${var.prefix}-resources"
+#   location = "West Europe"
+# }
+
 
 
 resource "azurerm_virtual_network" "main" {
@@ -49,28 +61,6 @@ resource "azurerm_public_ip" "main" {
   resource_group_name = var.resource_group_name
   allocation_method = "Dynamic"
   sku = "Basic"
-}
-
-resource "azurerm_network_security_group" "main" {
-  name                = "${var.prefix}-securitygroup"
-  location            = var.resource_group_location
-  resource_group_name = var.resource_group_name
-
-  security_rule {
-    name                       = "SSH"
-    priority                   = 101
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = 22
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-
-  tags = {
-    environment = "testing"
-  }
 }
 
 resource "azurerm_network_interface" "main" {
@@ -120,7 +110,7 @@ resource "azurerm_virtual_machine" "main" {
     disable_password_authentication = false
   }
   tags = {
-    environment = "testing"
+    environment = "staging"
   }
 }
 
