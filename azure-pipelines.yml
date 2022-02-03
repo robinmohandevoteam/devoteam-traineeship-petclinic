@@ -10,7 +10,6 @@ pool:
   vmImage: ubuntu-latest
   demands:
   - maven
-  - docker
 
 steps:
 
