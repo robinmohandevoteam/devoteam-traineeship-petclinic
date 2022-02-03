@@ -10,6 +10,7 @@ pool:
   vmImage: ubuntu-latest
   demands:
   - maven
+  - docker
 
 steps:
 
@@ -50,3 +51,33 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'deploy'
+
+- task: Docker@2
+  displayName: Login to ACR
+  inputs:
+    command: login
+    containerRegistry: dockerRegistryServiceConnection1
+- task: Docker@2
+  displayName: Login to Docker Hub
+  inputs:
+    command: login
+    containerRegistry: dockerRegistryServiceConnection2
+
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: jettypetclinic
+    command: build
+    Dockerfile: ./Dockerfile
+
+- task: Docker@2
+  displayName: Push image
+  inputs:
+    containerRegistry: |
+      $(dockerHub)
+    repository: jettypetclinic
+    command: push
+    tags: |
+      test1
+      test2
+
