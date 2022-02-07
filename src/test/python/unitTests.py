@@ -11,12 +11,11 @@ from selenium.common.exceptions import NoAlertPresentException
 from chromedriver_py import binary_path
 import unittest, time, re
 
-s=Service(ChromeDriverManager().install())
 
 
 class PetclinicDemo2(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome(service=s)
+        self.driver = webdriver.Chrome("/usr/local/share/chrome_driver")
         self.driver.implicitly_wait(30)
         self.base_url = "http://localhost:9999"
         self.verificationErrors = []
