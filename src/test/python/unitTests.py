@@ -1,15 +1,22 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
+from chromedriver_py import binary_path
 import unittest, time, re
+
+s=Service(ChromeDriverManager().install())
+
 
 class PetclinicDemo2(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(service=s)
         self.driver.implicitly_wait(30)
         self.base_url = "http://localhost:9999"
         self.verificationErrors = []
