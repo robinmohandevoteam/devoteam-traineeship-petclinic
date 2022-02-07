@@ -32,6 +32,9 @@ steps:
    pip install chromedriver-py==88.0.4324.96
    pip install pytest-xdist
    pip install pytest-nunit
+   pip install chromedriver_py
+   pip install webdriver_manager.chrome
+
   displayName: 'Install Python plugins (for pytest in mvn)'
 
 
