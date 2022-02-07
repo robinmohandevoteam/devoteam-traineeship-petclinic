@@ -67,7 +67,7 @@
         <aspectj.version>1.9.5</aspectj.version>
 
         <!-- Maven plugins -->
-        <jetty-maven-plugin.version>9.4.24.v20191120</jetty-maven-plugin.version>
+        <jetty-maven-plugin.version>10.0.7</jetty-maven-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
@@ -313,8 +313,46 @@
         <plugins>
 
             <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty-maven-plugin.version}</version>
+                <configuration>
+                  <scanIntervalSeconds>10</scanIntervalSeconds>
+                  <stopPort>8005</stopPort>
+                  <stopKey>STOP</stopKey>
+                </configuration>
+                <executions>
+                  <execution>
+                    <id>start-jetty</id>
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                      <goal>start-war</goal>
+                    </goals>
+                    <configuration>
+                      <scanIntervalSeconds>0</scanIntervalSeconds>
+                      <daemon>true</daemon>
+                      <war>./target/petclinic.war</war>
+                        <httpConnector>
+                     
+                          <port>9999</port>
+                        </httpConnector>
+                    </configuration>
+                  </execution>
+                  <execution>
+                    <id>stop-jetty</id>
+                    <phase>post-integration-test</phase>
+                    <goals>
+                      <goal>stop</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
                 <executions>
                  <execution>
                   <configuration>
@@ -328,13 +366,14 @@
                    </environmentVariables>
                   </configuration>
                   <id>python-test</id>
-                  <phase>test</phase>
+                  <phase>integration-test</phase>
                   <goals>
                    <goal>exec</goal>
                   </goals>
                  </execution>
                 </executions>
                </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -461,12 +500,6 @@
                         <version>${mockito.version}</version>
                     </dependency>
                 </dependencies>
-            </plugin>
-
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty-maven-plugin.version}</version>
             </plugin>
 
             <plugin>

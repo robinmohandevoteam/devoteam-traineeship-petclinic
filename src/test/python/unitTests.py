@@ -11,7 +11,7 @@ class PetclinicDemo2(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
-        self.base_url = "localhost:8080"
+        self.base_url = "http://localhost:9999"
         self.verificationErrors = []
         self.accept_next_alert = True
     
@@ -178,12 +178,12 @@ class PetclinicDemo2(unittest.TestCase):
         driver.find_element(By.CSS_SELECTOR,"div.col-sm-offset-2.col-sm-10").click()
         driver.find_element(By.CSS_SELECTOR,"button.btn.btn-default").click()
         print()
-        assert driver.find_element(By.CSS_SELECTOR,"dd").text == "Vicky"
-        assert driver.find_element(By.XPATH,"//dd[2]").text == "2022-01-10"
+        assert driver.find_element(By.CSS_SELECTOR,"dd").text == "Mushi"
+        assert driver.find_element(By.XPATH,"//dd[2]").text == "2022-02-10"
         assert driver.find_element(By.XPATH,"//dd[3]").text == "cat"
     
      # Label: check mushi not in wimlex
-    def test11_add_pet_mushi_not_in_van_oranje(self):
+    def test11_pet_mushi_not_in_van_oranje(self):
         driver = self.driver
         driver.get(self.base_url)
         driver.find_element(By.XPATH,"//div[@id='main-navbar']/ul/li[2]/a/span[2]").click()
