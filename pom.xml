@@ -359,7 +359,7 @@
                    <executable>python3</executable>
                    <workingDirectory>src/test/python</workingDirectory>
                    <arguments>
-                    <argument>unitTests.py</argument>
+                    <argument>pytest unitTests.py --html=./report.html</argument>
                    </arguments>    
                    <environmentVariables>
                      <PYTHONPATH>../../main/python:$PYTHONPATH</PYTHONPATH>

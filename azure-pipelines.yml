@@ -29,11 +29,11 @@ steps:
    pip install selenium
    pip install pytest
    pip install pytest-html
-   pip install chromedriver-py==88.0.4324.96
-   pip install pytest-xdist
-   pip install pytest-nunit
-   pip install chromedriver_py
-   pip install webdriver_manager
+  #  pip install chromedriver-py==88.0.4324.96
+  #  pip install pytest-xdist
+  #  pip install pytest-nunit
+  #  pip install chromedriver_py
+  #  pip install webdriver_manager
 
   displayName: 'Install Python plugins (for pytest in mvn)'
 
@@ -43,29 +43,29 @@ steps:
   inputs:
     artifactsFeeds: petclinic
 
-# - task: Maven@3
-#   displayName: 'Maven Package'
-#   inputs:
-#     mavenPomFile: 'pom.xml'
-#     mavenOptions: '-Xmx3072m'
-#     javaHomeOption: 'JDKVersion'
-#     jdkVersionOption: '1.8'
-#     jdkArchitectureOption: 'x64'
-#     publishJUnitResults: true
-#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#     goals: 'package'
+- task: Maven@3
+  displayName: 'Maven Package'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
     
-# - task: Maven@3
-#   displayName: 'Maven Test'
-#   inputs:
-#     mavenPomFile: 'pom.xml'
-#     mavenOptions: '-Xmx3072m'
-#     javaHomeOption: 'JDKVersion'
-#     jdkVersionOption: '1.8'
-#     jdkArchitectureOption: 'x64'
-#     publishJUnitResults: true
-#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#     goals: 'test'
+- task: Maven@3
+  displayName: 'Maven Test'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'test'
 
 - task: Maven@3
   displayName: 'Maven Verify'

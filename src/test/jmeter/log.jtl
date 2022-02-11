@@ -1,0 +1,121 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1644574963927,254,Home page,200,OK,User threads 1-1,text,true,,3652,116,1,1,http://52.179.97.143/,249,0,118
+1644574964485,450,CSS,200,OK,User threads 1-1,text,true,,152706,143,2,2,http://52.179.97.143/resources/css/petclinic.css,91,0,0
+1644574964964,208,Home page,200,OK,User threads 1-2,text,true,,3652,116,2,2,http://52.179.97.143/,208,0,105
+1644574965237,192,JS,200,OK,User threads 1-1,text,true,,89760,150,2,2,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,103,0,0
+1644574965731,125,Vets,200,OK,User threads 1-1,text,true,,5099,120,3,3,http://52.179.97.143/vets,125,0,0
+1644574965476,497,CSS,200,OK,User threads 1-2,text,true,,152706,143,3,3,http://52.179.97.143/resources/css/petclinic.css,106,0,0
+1644574966158,104,Find owner,200,OK,User threads 1-1,text,true,,4258,127,3,3,http://52.179.97.143/owners/find,104,0,0
+1644574966070,296,Home page,200,OK,User threads 1-3,text,true,,3652,116,3,3,http://52.179.97.143/,296,0,191
+1644574966275,202,JS,200,OK,User threads 1-2,text,true,,89760,150,3,3,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,91,0,0
+1644574966564,108,"Find owner with lastname=""""",200,OK,User threads 1-1,text,true,,7564,132,3,3,http://52.179.97.143/owners?lastName=,107,0,0
+1644574966779,202,Vets,200,OK,User threads 1-2,text,true,,5099,120,4,4,http://52.179.97.143/vets,202,0,0
+1644574966974,215,Owner,200,OK,User threads 1-1,text,true,,5553,124,4,4,http://52.179.97.143/owners/1,212,0,0
+1644574966668,621,CSS,200,OK,User threads 1-3,text,true,,152706,143,4,4,http://52.179.97.143/resources/css/petclinic.css,107,0,0
+1644574967282,105,Find owner,200,OK,User threads 1-2,text,true,,4258,127,4,4,http://52.179.97.143/owners/find,105,0,0
+1644574967187,201,Home page,200,OK,User threads 1-4,text,true,,3652,116,4,4,http://52.179.97.143/,201,0,102
+1644574967490,103,Edit Owner,200,OK,User threads 1-1,text,true,,5921,129,4,4,http://52.179.97.143/owners/1/edit,102,0,0
+1644574967590,110,JS,200,OK,User threads 1-3,text,true,,89760,150,4,4,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,108,0,0
+1644574967688,215,"Find owner with lastname=""""",200,OK,User threads 1-2,text,true,,7564,132,4,4,http://52.179.97.143/owners?lastName=,215,0,0
+1644574967894,110,POST Edit Owner,200,OK,User threads 1-1,text,true,,6273,257,5,5,http://52.179.97.143/owners/1/edit,109,0,0
+1644574968000,107,Vets,200,OK,User threads 1-3,text,true,,5099,120,5,5,http://52.179.97.143/vets,107,0,0
+1644574967688,526,CSS,200,OK,User threads 1-4,text,true,,152706,143,5,5,http://52.179.97.143/resources/css/petclinic.css,212,0,0
+1644574968203,93,Owner,200,OK,User threads 1-2,text,true,,5558,124,5,5,http://52.179.97.143/owners/2,93,0,0
+1644574968304,108,New visit,200,OK,User threads 1-1,text,true,,5629,142,5,5,http://52.179.97.143/owners/1/pets/1/visits/new,108,0,0
+1644574968408,191,Find owner,200,OK,User threads 1-3,text,true,,4258,127,5,5,http://52.179.97.143/owners/find,191,0,0
+1644574968294,305,Home page,200,OK,User threads 1-5,text,true,,3652,116,5,5,http://52.179.97.143/,305,0,117
+1644574968515,196,JS,200,OK,User threads 1-4,text,true,,89760,150,5,5,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,88,0,0
+1644574968597,114,Edit Owner,200,OK,User threads 1-2,text,true,,5920,129,5,5,http://52.179.97.143/owners/2/edit,112,0,0
+1644574968712,119,POST new visit,200,OK,User threads 1-1,text,true,,5824,226,5,5,http://52.179.97.143/owners/1/pets/1/visits/new,119,0,0
+1644574968900,104,"Find owner with lastname=""""",200,OK,User threads 1-3,text,true,,7564,132,5,5,http://52.179.97.143/owners?lastName=,104,0,0
+1644574969012,104,Vets,200,OK,User threads 1-4,text,true,,5099,120,6,6,http://52.179.97.143/vets,104,0,0
+1644574969012,104,POST Edit Owner,200,OK,User threads 1-2,text,true,,6273,257,6,6,http://52.179.97.143/owners/2/edit,104,0,0
+1644574969132,101,Owner,200,OK,User threads 1-1,text,true,,5553,124,6,6,http://52.179.97.143/owners/1,101,0,0
+1644574968900,435,CSS,200,OK,User threads 1-5,text,true,,152706,143,5,5,http://52.179.97.143/resources/css/petclinic.css,102,0,0
+1644574969305,100,Owner,200,OK,User threads 1-3,text,true,,6726,124,5,5,http://52.179.97.143/owners/3,99,0,0
+1644574969416,122,Find owner,200,OK,User threads 1-4,text,true,,4258,127,5,5,http://52.179.97.143/owners/find,122,0,0
+1644574969416,124,New visit,200,OK,User threads 1-2,text,true,,5631,142,5,5,http://52.179.97.143/owners/2/pets/2/visits/new,122,0,0
+1644574969403,237,Home page,200,OK,User threads 1-6,text,true,,3652,116,5,5,http://52.179.97.143/,237,0,86
+1644574969706,139,Edit Owner,200,OK,User threads 1-3,text,true,,5924,129,5,5,http://52.179.97.143/owners/3/edit,139,0,0
+1644574969636,224,JS,200,OK,User threads 1-5,text,true,,89760,150,5,5,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,89,0,0
+1644574969840,109,POST new visit,200,OK,User threads 1-2,text,true,,5826,226,5,5,http://52.179.97.143/owners/2/pets/2/visits/new,108,0,0
+1644574969839,110,"Find owner with lastname=""""",200,OK,User threads 1-4,text,true,,7564,132,5,5,http://52.179.97.143/owners?lastName=,110,0,0
+1644574970146,112,POST Edit Owner,200,OK,User threads 1-3,text,true,,6273,257,6,6,http://52.179.97.143/owners/3/edit,108,0,0
+1644574970161,97,Vets,200,OK,User threads 1-5,text,true,,5099,120,6,6,http://52.179.97.143/vets,97,0,0
+1644574969941,521,CSS,200,OK,User threads 1-6,text,true,,152706,143,6,6,http://52.179.97.143/resources/css/petclinic.css,109,0,0
+1644574970249,213,Owner,200,OK,User threads 1-4,text,true,,5552,124,6,6,http://52.179.97.143/owners/4,213,0,0
+1644574970249,213,Owner,200,OK,User threads 1-2,text,true,,5558,124,6,6,http://52.179.97.143/owners/2,213,0,0
+1644574970559,106,New visit,200,OK,User threads 1-3,text,true,,5632,142,5,5,http://52.179.97.143/owners/3/pets/3/visits/new,106,0,0
+1644574970559,106,Find owner,200,OK,User threads 1-5,text,true,,4258,127,5,5,http://52.179.97.143/owners/find,106,0,0
+1644574970512,254,Home page,200,OK,User threads 1-7,text,true,,3652,116,5,5,http://52.179.97.143/,254,0,86
+1644574970763,110,Edit Owner,200,OK,User threads 1-4,text,true,,5916,129,5,5,http://52.179.97.143/owners/4/edit,110,0,0
+1644574970763,210,JS,200,OK,User threads 1-6,text,true,,89760,150,5,5,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,106,0,0
+1644574970966,213,POST new visit,200,OK,User threads 1-3,text,true,,5827,226,5,5,http://52.179.97.143/owners/3/pets/3/visits/new,213,0,0
+1644574970966,213,"Find owner with lastname=""""",200,OK,User threads 1-5,text,true,,7564,132,5,5,http://52.179.97.143/owners?lastName=,213,0,0
+1644574971175,107,POST Edit Owner,200,OK,User threads 1-4,text,true,,6273,257,5,5,http://52.179.97.143/owners/4/edit,107,0,0
+1644574971275,109,Vets,200,OK,User threads 1-6,text,true,,5099,120,6,6,http://52.179.97.143/vets,109,0,0
+1644574971067,421,CSS,200,OK,User threads 1-7,text,true,,152706,143,6,6,http://52.179.97.143/resources/css/petclinic.css,112,0,0
+1644574971481,106,Owner,200,OK,User threads 1-5,text,true,,5555,124,6,6,http://52.179.97.143/owners/5,106,0,0
+1644574971481,108,Owner,200,OK,User threads 1-3,text,true,,6726,124,6,6,http://52.179.97.143/owners/3,108,0,0
+1644574971584,105,New visit,200,OK,User threads 1-4,text,true,,5633,142,5,5,http://52.179.97.143/owners/4/pets/4/visits/new,105,0,0
+1644574971685,117,Find owner,200,OK,User threads 1-6,text,true,,4258,127,5,5,http://52.179.97.143/owners/find,116,0,0
+1644574971625,178,Home page,200,OK,User threads 1-8,text,true,,3652,116,5,5,http://52.179.97.143/,178,0,90
+1644574971790,208,JS,200,OK,User threads 1-7,text,true,,89760,150,5,5,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,111,0,0
+1644574971889,110,Edit Owner,200,OK,User threads 1-5,text,true,,5918,129,5,5,http://52.179.97.143/owners/5/edit,110,0,0
+1644574971991,98,POST new visit,200,OK,User threads 1-4,text,true,,5828,226,5,5,http://52.179.97.143/owners/4/pets/4/visits/new,98,0,0
+1644574972103,102,"Find owner with lastname=""""",200,OK,User threads 1-6,text,true,,7564,132,5,5,http://52.179.97.143/owners?lastName=,101,0,0
+1644574972300,97,POST Edit Owner,200,OK,User threads 1-5,text,true,,6273,257,5,5,http://52.179.97.143/owners/5/edit,96,0,0
+1644574972300,98,Vets,200,OK,User threads 1-7,text,true,,5099,120,5,5,http://52.179.97.143/vets,97,0,0
+1644574972391,163,Owner,200,OK,User threads 1-4,text,true,,5552,124,6,6,http://52.179.97.143/owners/4,162,0,0
+1644574972104,457,CSS,200,OK,User threads 1-8,text,true,,152706,143,5,5,http://52.179.97.143/resources/css/petclinic.css,98,0,0
+1644574972506,161,Owner,200,OK,User threads 1-6,text,true,,7570,124,5,5,http://52.179.97.143/owners/6,160,0,0
+1644574972699,119,Find owner,200,OK,User threads 1-7,text,true,,4258,127,5,5,http://52.179.97.143/owners/find,119,0,0
+1644574972699,121,New visit,200,OK,User threads 1-5,text,true,,5630,142,5,5,http://52.179.97.143/owners/5/pets/5/visits/new,121,0,0
+1644574972735,186,Home page,200,OK,User threads 1-9,text,true,,3652,116,5,5,http://52.179.97.143/,185,0,86
+1644574972862,204,JS,200,OK,User threads 1-8,text,true,,89760,150,5,5,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,89,0,0
+1644574972968,99,Edit Owner,200,OK,User threads 1-6,text,true,,5914,129,5,5,http://52.179.97.143/owners/6/edit,98,0,0
+1644574973121,131,POST new visit,200,OK,User threads 1-5,text,true,,5825,226,5,5,http://52.179.97.143/owners/5/pets/5/visits/new,131,0,0
+1644574973119,133,"Find owner with lastname=""""",200,OK,User threads 1-7,text,true,,7564,132,5,5,http://52.179.97.143/owners?lastName=,133,0,0
+1644574973368,106,POST Edit Owner,200,OK,User threads 1-6,text,true,,6273,257,5,5,http://52.179.97.143/owners/6/edit,106,0,0
+1644574973368,106,Vets,200,OK,User threads 1-8,text,true,,5099,120,5,5,http://52.179.97.143/vets,106,0,0
+1644574973553,134,Owner,200,OK,User threads 1-7,text,true,,5546,124,6,6,http://52.179.97.143/owners/7,134,0,0
+1644574973222,467,CSS,200,OK,User threads 1-9,text,true,,152706,143,6,6,http://52.179.97.143/resources/css/petclinic.css,117,0,0
+1644574973553,137,Owner,200,OK,User threads 1-5,text,true,,5555,124,6,6,http://52.179.97.143/owners/5,137,0,0
+1644574973776,92,Find owner,200,OK,User threads 1-8,text,true,,4258,127,5,5,http://52.179.97.143/owners/find,92,0,0
+1644574973776,93,New visit,200,OK,User threads 1-6,text,true,,5633,142,5,5,http://52.179.97.143/owners/6/pets/6/visits/new,93,0,0
+1644574973839,206,Home page,200,OK,User threads 1-10,text,true,,3652,116,5,5,http://52.179.97.143/,206,0,104
+1644574973989,189,Edit Owner,200,OK,User threads 1-7,text,true,,5911,129,5,5,http://52.179.97.143/owners/7/edit,187,0,0
+1644574973991,187,JS,200,OK,User threads 1-9,text,true,,89760,150,5,5,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,90,0,0
+1644574974170,112,"Find owner with lastname=""""",200,OK,User threads 1-8,text,true,,7564,132,5,5,http://52.179.97.143/owners?lastName=,112,0,0
+1644574974171,111,POST new visit,200,OK,User threads 1-6,text,true,,5828,226,5,5,http://52.179.97.143/owners/6/pets/6/visits/new,111,0,0
+1644574974480,90,POST Edit Owner,200,OK,User threads 1-7,text,true,,6273,257,5,5,http://52.179.97.143/owners/7/edit,90,0,0
+1644574974480,91,Vets,200,OK,User threads 1-9,text,true,,5099,120,5,5,http://52.179.97.143/vets,91,0,0
+1644574974584,90,Owner,200,OK,User threads 1-8,text,true,,5554,124,5,5,http://52.179.97.143/owners/8,90,0,0
+1644574974584,188,Owner,200,OK,User threads 1-6,text,true,,7570,124,5,5,http://52.179.97.143/owners/6,188,0,0
+1644574974347,428,CSS,200,OK,User threads 1-10,text,true,,152706,143,5,5,http://52.179.97.143/resources/css/petclinic.css,107,0,0
+1644574974872,100,Find owner,200,OK,User threads 1-9,text,true,,4258,127,4,4,http://52.179.97.143/owners/find,99,0,0
+1644574974871,102,New visit,200,OK,User threads 1-7,text,true,,5898,142,4,4,http://52.179.97.143/owners/7/pets/7/visits/new,102,0,0
+1644574974976,92,Edit Owner,200,OK,User threads 1-8,text,true,,5915,129,4,4,http://52.179.97.143/owners/8/edit,92,0,0
+1644574975077,232,JS,200,OK,User threads 1-10,text,true,,89760,150,4,4,http://52.179.97.143/webjars/jquery/3.5.1/jquery.min.js,140,0,0
+1644574975274,104,POST new visit,200,OK,User threads 1-7,text,true,,6093,226,4,4,http://52.179.97.143/owners/7/pets/7/visits/new,104,0,0
+1644574975273,105,"Find owner with lastname=""""",200,OK,User threads 1-9,text,true,,7564,132,4,4,http://52.179.97.143/owners?lastName=,105,0,0
+1644574975370,112,POST Edit Owner,200,OK,User threads 1-8,text,true,,6273,257,4,4,http://52.179.97.143/owners/8/edit,112,0,0
+1644574975611,91,Vets,200,OK,User threads 1-10,text,true,,5099,120,4,4,http://52.179.97.143/vets,91,0,0
+1644574975680,105,Owner,200,OK,User threads 1-9,text,true,,5561,124,4,4,http://52.179.97.143/owners/9,104,0,0
+1644574975680,105,Owner,200,OK,User threads 1-7,text,true,,5546,124,4,4,http://52.179.97.143/owners/7,105,0,0
+1644574975784,103,New visit,200,OK,User threads 1-8,text,true,,5895,142,3,3,http://52.179.97.143/owners/8/pets/8/visits/new,103,0,0
+1644574976003,89,Find owner,200,OK,User threads 1-10,text,true,,4258,127,3,3,http://52.179.97.143/owners/find,89,0,0
+1644574976086,94,Edit Owner,200,OK,User threads 1-9,text,true,,5923,129,3,3,http://52.179.97.143/owners/9/edit,93,0,0
+1644574976188,109,POST new visit,200,OK,User threads 1-8,text,true,,6090,226,3,3,http://52.179.97.143/owners/8/pets/8/visits/new,109,0,0
+1644574976393,96,"Find owner with lastname=""""",200,OK,User threads 1-10,text,true,,7564,132,3,3,http://52.179.97.143/owners?lastName=,96,0,0
+1644574976481,112,POST Edit Owner,200,OK,User threads 1-9,text,true,,6273,257,3,3,http://52.179.97.143/owners/9/edit,110,0,0
+1644574976598,100,Owner,200,OK,User threads 1-8,text,true,,5554,124,3,3,http://52.179.97.143/owners/8,100,0,0
+1644574976791,104,Owner,200,OK,User threads 1-10,text,true,,6735,125,2,2,http://52.179.97.143/owners/10,104,0,0
+1644574976894,103,New visit,200,OK,User threads 1-9,text,true,,5627,142,2,2,http://52.179.97.143/owners/9/pets/9/visits/new,103,0,0
+1644574977196,125,Edit Owner,200,OK,User threads 1-10,text,true,,5925,130,2,2,http://52.179.97.143/owners/10/edit,125,0,0
+1644574977299,126,POST new visit,200,OK,User threads 1-9,text,true,,5822,226,2,2,http://52.179.97.143/owners/9/pets/9/visits/new,126,0,0
+1644574977622,109,POST Edit Owner,200,OK,User threads 1-10,text,true,,6274,259,2,2,http://52.179.97.143/owners/10/edit,109,0,0
+1644574977727,93,Owner,200,OK,User threads 1-9,text,true,,5561,124,2,2,http://52.179.97.143/owners/9,93,0,0
+1644574978032,108,New visit,200,OK,User threads 1-10,text,true,,5636,144,1,1,http://52.179.97.143/owners/10/pets/10/visits/new,108,0,0
+1644574978441,113,POST new visit,200,OK,User threads 1-10,text,true,,5831,228,1,1,http://52.179.97.143/owners/10/pets/10/visits/new,113,0,0
+1644574978855,105,Owner,200,OK,User threads 1-10,text,true,,6735,125,1,1,http://52.179.97.143/owners/10,105,0,0
