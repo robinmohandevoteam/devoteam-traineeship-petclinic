@@ -1,0 +1,84 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+  branches:
+    include:
+    - '*'
+    exclude:
+    - 'master'
+    
+pool:
+  vmImage: ubuntu-latest
+  demands:
+  - maven
+
+variables:
+  imageName: 'jettypetclinic'
+  dockerhubNS: 'robinmohandevoteam' 
+
+steps:
+
+
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.8 (for pytest in mvn)'
+  inputs:
+    versionSpec: '3.8'
+    addToPath: true
+
+- script: |
+   python -m pip install --upgrade pip
+   pip install selenium
+   pip install pytest
+   pip install pytest-html
+  #  pip install chromedriver-py==88.0.4324.96
+  #  pip install pytest-xdist
+  #  pip install pytest-nunit
+  #  pip install chromedriver_py
+  #  pip install webdriver_manager
+
+  displayName: 'Install Python plugins (for pytest in mvn)'
+
+
+- task: MavenAuthenticate@0
+  displayName: 'Maven Authenticate'
+  inputs:
+    artifactsFeeds: petclinic
+
+- task: Maven@3
+  displayName: 'Maven Package'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+    
+- task: Maven@3
+  displayName: 'Maven Test'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'test'
+
+- task: Maven@3
+  displayName: 'Maven Verify'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'verify'
