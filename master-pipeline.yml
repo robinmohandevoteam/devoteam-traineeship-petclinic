@@ -111,6 +111,6 @@ steps:
       dockerrobinmohandevoteam
     repository: $(dockerhubNS)/$(imageName)
     command: push
-    # tags: |
-    #   test1
-    #   test2
+    tags: |
+      latest
+      test2
