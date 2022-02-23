@@ -356,10 +356,11 @@
                 <executions>
                  <execution>
                   <configuration>
-                   <executable>python3</executable>
+                   <executable>pytest</executable>
                    <workingDirectory>src/test/python</workingDirectory>
                    <arguments>
                     <argument>unitTests.py</argument>
+                    <argument>--json-report</argument>
                    </arguments>    
                    <environmentVariables>
                      <PYTHONPATH>../../main/python:$PYTHONPATH</PYTHONPATH>

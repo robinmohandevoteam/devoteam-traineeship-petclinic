@@ -874,3 +874,4 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (
     at java.lang.Thread.run (Thread.java:829)
 [INFO] Closing JPA EntityManagerFactory for persistence unit 'petclinic'
 [INFO] Stopped o.e.j.m.p.MavenWebAppContext@3605d078{/,null,STOPPED}{/home/robin/Documents/projects/devoteam-traineeship-petclinic/target/petclinic.war}
+[INFO] Stopped o.e.j.m.p.MavenWebAppContext@3605d078{/,null,STOPPED}{/home/robin/Documents/projects/devoteam-traineeship-petclinic/target/petclinic.war}

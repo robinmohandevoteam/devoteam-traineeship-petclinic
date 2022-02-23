@@ -18,19 +18,19 @@ variables:
 steps:
 
 
-# - task: UsePythonVersion@0
-#   displayName: 'Use Python 3.8 (for pytest in mvn)'
-#   inputs:
-#     versionSpec: '3.8'
-#     addToPath: true
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.8 (for pytest in mvn)'
+  inputs:
+    versionSpec: '3.8'
+    addToPath: true
 
-# - script: |
-#    python -m pip install --upgrade pip
-#    pip install selenium
-#    pip install pytest
-#    pip install pytest-html
+- script: |
+   python -m pip install --upgrade pip
+   pip install selenium
+   pip install pytest
+   pip install pytest-html
 
-  # displayName: 'Install Python plugins (for pytest in mvn)'
+  displayName: 'Install Python plugins (for pytest in mvn)'
 
 
 - task: MavenAuthenticate@0

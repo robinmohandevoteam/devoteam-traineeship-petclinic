@@ -21,6 +21,17 @@ variables:
 
 steps:
 
+- script: |
+    wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+    sudo apt-get install apt-transport-https
+    echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
+    sudo apt-get update && sudo apt-get install filebeat
+    sudo systemctl enable filebeat
+    sudo cp ./filebeatfiles/* /etc/filebeat/
+    sudo filebeat enable logstash
+    sudo systemctl start filebeat
+
+
 
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.8 (for pytest in mvn)'
