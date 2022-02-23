@@ -44,7 +44,7 @@ steps:
    pip install selenium
    pip install pytest
    pip install pytest-html
-   pip install pytest-json-report 1.4.1
+   pip install pytest-json-report
 
 
   #  pip install chromedriver-py==88.0.4324.96
