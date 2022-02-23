@@ -29,6 +29,8 @@ steps:
    pip install selenium
    pip install pytest
    pip install pytest-html
+   pip pytest-json-report 1.4.1
+
 
   displayName: 'Install Python plugins (for pytest in mvn)'
 
