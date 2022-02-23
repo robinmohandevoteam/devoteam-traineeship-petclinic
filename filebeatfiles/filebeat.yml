@@ -27,8 +27,9 @@ filebeat.inputs:
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
     #/var/log/*.log
-    /home/robin/Documents/projects/devoteam-traineeship-petclinic/mvn.log
-    /home/robin/Documents/projects/devoteam-traineeship-petclinic/src/test/python/report.log
+    # /home/robin/Documents/projects/devoteam-traineeship-petclinic/mvn.log
+    # /home/robin/Documents/projects/devoteam-traineeship-petclinic/src/test/python/report.log
+    ./*.log
     #/home/robin/Documents/projects/devoteam-traineeship-petclinic/*.log
     #- c:\programdata\elasticsearch\logs\*
     #/home/robin/Documents/projects/devoteam-traineeship-petclinic/src/test/python/report.log

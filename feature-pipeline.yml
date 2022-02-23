@@ -44,7 +44,7 @@ steps:
    pip install selenium
    pip install pytest
    pip install pytest-html
-   pip pytest-json-report 1.4.1
+   pip install pytest-json-report 1.4.1
 
 
   #  pip install chromedriver-py==88.0.4324.96
@@ -72,6 +72,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    options: '--log-file ./mvn.log'
     
 - task: Maven@3
   displayName: 'Maven Test'
