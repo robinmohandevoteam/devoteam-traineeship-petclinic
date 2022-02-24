@@ -25,11 +25,15 @@ filebeat.inputs:
   enabled: true
 
   # Paths that should be crawled and fetched. Glob based paths.
-  paths:
-    #/var/log/*.log
-    # /home/robin/Documents/projects/devoteam-traineeship-petclinic/mvn.log
-    # /home/robin/Documents/projects/devoteam-traineeship-petclinic/src/test/python/report.log
-    ./*.log
+  paths: /home/robin/Documents/projects/devoteam-traineeship-petclinic/*.json
+  json.keys_under_root: true
+  json.overwrite_keys: true
+  json.add_error_key: true
+  json.expand_keys: true
+
+          #- /var/log/*.log
+      #- /home/robin/Documents/projects/devoteam-traineeship-petclinic/mvn.log
+      #- /home/robin/Documents/projects/devoteam-traineeship-petclinic/src/test/python/report.log
     #/home/robin/Documents/projects/devoteam-traineeship-petclinic/*.log
     #- c:\programdata\elasticsearch\logs\*
     #/home/robin/Documents/projects/devoteam-traineeship-petclinic/src/test/python/report.log

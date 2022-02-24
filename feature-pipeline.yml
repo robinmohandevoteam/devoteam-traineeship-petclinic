@@ -29,6 +29,8 @@ steps:
     sudo systemctl enable filebeat
     sudo cp -r ./filebeatfiles/* /etc/filebeat/
     sudo filebeat enable logstash
+    sudo filebeat test conf
+    sudo filebeat test output
     sudo systemctl start filebeat
 
 
@@ -45,6 +47,7 @@ steps:
    pip install pytest
    pip install pytest-html
    pip install pytest-json-report
+   pip install pytest-elasticsearch
 
 
   #  pip install chromedriver-py==88.0.4324.96

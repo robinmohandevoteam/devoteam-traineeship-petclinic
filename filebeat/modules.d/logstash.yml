@@ -5,6 +5,7 @@
   # logs
   log:
     enabled: true
+    var.paths: ["/home/robin/Documents/projects/devoteam-traineeship-petclinic/mvn.log"]
 
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
