@@ -33,6 +33,11 @@ steps:
     sudo filebeat test output
     sudo systemctl start filebeat
 
+- script: |
+    ls /
+    ls /etc/
+    ls /etc/filebeat
+
 
 
 - task: UsePythonVersion@0
