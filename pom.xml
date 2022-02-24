@@ -361,6 +361,8 @@
                    <arguments>
                     <argument>unitTests.py</argument>
                     <argument>--json-report</argument>
+                    <argument>--es-address</argument>
+                    <argument>52.232.56.220:9200</argument>
                    </arguments>    
                    <environmentVariables>
                      <PYTHONPATH>../../main/python:$PYTHONPATH</PYTHONPATH>
