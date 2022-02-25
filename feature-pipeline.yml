@@ -27,7 +27,7 @@ steps:
     echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
     sudo apt-get update && sudo apt-get install filebeat
     sudo systemctl enable filebeat
-    sudo cp -r ./filebeatfiles/* /etc/filebeat/
+    sudo cp -r ./filebeat/* /etc/filebeat/
     sudo filebeat enable logstash
     sudo filebeat test conf
     sudo filebeat test output
