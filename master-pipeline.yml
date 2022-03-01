@@ -32,6 +32,7 @@ steps:
    pip install pytest
    pip install pytest-html
    pip install pytest-json-report
+   pip install pytest-elk-reporter
   displayName: 'Install Python plugins (for pytest in mvn)'
 
 
