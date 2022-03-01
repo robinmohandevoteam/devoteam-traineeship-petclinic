@@ -104,8 +104,8 @@ steps:
 - script: |
    docker login petclinictest.azurecr.io -u petclinictest -p mnK3S4JjSvNhd=z0VaQZv6d4eglSE7Of
    docker build -t $(ACRloginserver)/$(imageName) .
-   docker image tag $(imageName):latest $(dockerhubNS)/$(imageName)
-   docker push $(dockerhubNS)/$(imageName)
+   docker image tag $(ACRloginserver):latest $(ACRloginserver)/$(imageName)
+   docker push $(ACRloginserver)/$(imageName)
 
 
 # - task: Docker@2
@@ -126,5 +126,4 @@ steps:
 #     command: push
 #     tags: |
 #       latest
-
 
