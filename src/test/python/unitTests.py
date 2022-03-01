@@ -191,7 +191,7 @@ class PetclinicDemo2(unittest.TestCase):
         driver.find_element(By.CSS_SELECTOR,"button.btn.btn-default").click()
         print()
         assert driver.find_element(By.CSS_SELECTOR,"dd").text == "Mushi"
-        assert driver.find_element(By.XPATH,"//dd[2]").text == "2022-02-10"
+        assert driver.find_element(By.XPATH,"//dd[2]").text == "2022-03-10"
         assert driver.find_element(By.XPATH,"//dd[3]").text == "cat"
     
      # Label: check mushi not in wimlex
