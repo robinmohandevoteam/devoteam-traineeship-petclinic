@@ -13,10 +13,12 @@ pool:
 
 variables:
   imageName: 'jettypetclinic'
-  dockerhubNS: 'robinmohandevoteam' 
+  dockerhubNS: 'robinmohandevoteam'
+  ACRloginserver: 'petclinictest.azurecr.io'
 
 steps:
 
+- script: echo $(git log -1 --format=%h)
 
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.8 (for pytest in mvn)'
@@ -30,8 +32,6 @@ steps:
    pip install pytest
    pip install pytest-html
    pip pytest-json-report 1.4.1
-
-
   displayName: 'Install Python plugins (for pytest in mvn)'
 
 
@@ -52,29 +52,29 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
-# - task: Maven@3
-#   displayName: 'Maven Test'
-#   inputs:
-#     mavenPomFile: 'pom.xml'
-#     mavenOptions: '-Xmx3072m'
-#     javaHomeOption: 'JDKVersion'
-#     jdkVersionOption: '1.8'
-#     jdkArchitectureOption: 'x64'
-#     publishJUnitResults: true
-#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#     goals: 'test'
+- task: Maven@3
+  displayName: 'Maven Test'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'test'
 
-# - task: Maven@3
-#   displayName: 'Maven Verify'
-#   inputs:
-#     mavenPomFile: 'pom.xml'
-#     mavenOptions: '-Xmx3072m'
-#     javaHomeOption: 'JDKVersion'
-#     jdkVersionOption: '1.11'
-#     jdkArchitectureOption: 'x64'
-#     publishJUnitResults: true
-#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#     goals: 'verify'
+- task: Maven@3
+  displayName: 'Maven Verify'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'verify'
 
 # - task: Maven@3
 #   inputs:
@@ -88,27 +88,40 @@ steps:
 #     goals: 'deploy'
 
 
-- task: Docker@2
-  displayName: Login to Docker Hub
-  inputs:
-    command: login
-    containerRegistry: dockerrobinmohandevoteam
+# - task: Docker@2
+#   displayName: Login to Docker Hub
+#   inputs:
+#     command: login
+#     containerRegistry: dockerrobinmohandevoteam
 
-- task: Docker@2
-  displayName: Build an image
-  inputs:
-    repository: $(dockerhubNS)/$(imageName)
-    command: build
-    Dockerfile: ./Dockerfile
-    tags: |
-      latest
+# - task: Docker@2
+#   displayName: Login to Docker Hub
+#   inputs:
+#     command: login 
+#     containerRegistry: dockerrobinmohandevoteam'
 
-- task: Docker@2
-  displayName: Push image
-  inputs:
-    containerRegistry: |
-      dockerrobinmohandevoteam
-    repository: $(dockerhubNS)/$(imageName)
-    command: push
-    tags: |
-      latest
+- script: |
+   docker login petclinictest.azurecr.io -u petclinictest -p mnK3S4JjSvNhd=z0VaQZv6d4eglSE7Of
+   docker build -t $(ACRloginserver)/$(imageName) .
+   docker image tag $(imageName):latest $(dockerhubNS)/$(imageName)
+   docker push $(dockerhubNS)/$(imageName)
+
+
+# - task: Docker@2
+#   displayName: Build an image
+#   inputs:
+#     repository: $(dockerhubNS)/$(imageName)
+#     command: build
+#     Dockerfile: ./Dockerfile
+#     tags: |
+#       latest
+
+# - task: Docker@2
+#   displayName: Push image
+#   inputs:
+#     containerRegistry: |
+#       dockerrobinmohandevoteam
+#     repository: $(dockerhubNS)/$(imageName)
+#     command: push
+#     tags: |
+#       latest
