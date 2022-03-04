@@ -1,0 +1,48 @@
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: petclinictest-ns
+  spec:
+    finalizers:
+      - kubernetes
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: petclinictest-deployment
+    namespace: petclinictest-ns
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: petclinictest-deployment
+    template:
+      metadata:
+        labels:
+          app: petclinictest-deployment
+      spec:
+        nodeSelector:
+          beta.kubernetes.io/os: linux
+        containers:
+          - name: jettypetclinic
+            image: petclinictest.azurecr.io/jettypetclinic:latest
+            resources:
+              requests:
+                cpu: 100m
+                memory: 128Mi
+              limits:
+                cpu: 250m
+                memory: 256Mi
+            ports:
+              - containerPort: 80
+                name: redis
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: petclinictest-lb
+    namespace: petclinictest-ns
+  spec:
+    type: LoadBalancer
+    ports:
+      - port: 80
+    selector:
+      app: petclinictest-deployment
